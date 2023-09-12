@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://123.57.241.113:3306/db_flash_sale?useUnicode=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
