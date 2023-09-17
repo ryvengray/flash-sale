@@ -80,7 +80,6 @@ function buttonActive() {
 }
 
 function setCountDown(txt) {
-    console.debug("倒计时", txt)
     $('#countDown').text(txt)
 }
 

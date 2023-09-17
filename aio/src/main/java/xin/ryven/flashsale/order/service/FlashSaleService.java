@@ -11,4 +11,6 @@ public interface FlashSaleService {
     FlashSale getById(Long id);
 
     String flashSale(Long id, Integer quantity, String phone);
+
+    String flashSaleV2(Long id, Integer quantity, String phone);
 }

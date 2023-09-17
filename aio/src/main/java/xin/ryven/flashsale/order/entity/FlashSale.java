@@ -20,6 +20,8 @@ public class FlashSale {
 
     private Integer quantity;
 
+    private Integer version;
+
     private Date startTime;
 
     private Date endTime;

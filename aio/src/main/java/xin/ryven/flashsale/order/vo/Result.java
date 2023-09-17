@@ -3,30 +3,30 @@ package xin.ryven.flashsale.order.vo;
 import lombok.Data;
 
 @Data
-public class Result<T> {
+public class Result {
 
     private int errorCode;
 
     private String msg;
 
-    private T data;
+    private Object data;
 
-    public static <T> Result<T> success() {
-        Result<T> r = new Result<>();
+    public static Result success() {
+        Result r = new Result();
         r.errorCode = 0;
         r.msg = "success";
         return r;
     }
 
-    public static Result<Void> fail(String msg) {
-        Result<Void> r = new Result<>();
-        r.errorCode = 1;
+    public static Result fail(int errorCode, String msg) {
+        Result r = new Result();
+        r.errorCode = errorCode;
         r.msg = msg;
         return r;
     }
 
-    public static <T> Result<T> success(T data) {
-        Result<T> r = new Result<>();
+    public static Result success(Object data) {
+        Result r = new Result();
         r.errorCode = 0;
         r.msg = "success";
         r.data = data;

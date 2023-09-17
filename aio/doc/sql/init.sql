@@ -7,6 +7,7 @@ CREATE TABLE db_flash_sale.flash_sale
     `id`          BIGINT       NOT NUll AUTO_INCREMENT COMMENT '商品库存ID',
     `name`        VARCHAR(120) NOT NULL COMMENT '商品名称',
     `quantity`    int          NOT NULL COMMENT '库存数量',
+    `version`     int          NOT NULL DEFAULT 0 COMMENT '数据版本',
     `start_time`  TIMESTAMP    NOT NULL COMMENT '秒杀开始时间',
     `end_time`    TIMESTAMP    NOT NULL COMMENT '秒杀结束时间',
     `create_time` TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
