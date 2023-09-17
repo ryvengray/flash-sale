@@ -18,6 +18,13 @@ public class Result<T> {
         return r;
     }
 
+    public static Result<Void> fail(String msg) {
+        Result<Void> r = new Result<>();
+        r.errorCode = 1;
+        r.msg = msg;
+        return r;
+    }
+
     public static <T> Result<T> success(T data) {
         Result<T> r = new Result<>();
         r.errorCode = 0;

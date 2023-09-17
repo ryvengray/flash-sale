@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Sale Detail</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">秒杀商品</div>
+        <div class="panel-body">
+            <label>商品ID: &nbsp;&nbsp;</label><span id="id"></span><br/>
+            <label>商品名称: &nbsp;&nbsp; </label><span id="name"></span><br/>
+            <label>库存量: &nbsp;&nbsp; </label><span id="quantity"></span><br/>
+            <label>开始时间: &nbsp;&nbsp; </label><span id="startTime"></span><br/>
+            <label>结束时间: &nbsp;&nbsp; </label><span id="endTime"></span><br/>
+            <label>倒计时: &nbsp;&nbsp; </label><span id="countDown"></span><br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <label for="phone">手机号</label><input id="phone" class="form-control"/>
+        <label for="num">数量</label>
+        <span>
+        <select id="num" class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+</select>
+    </span>
+        <br/>
+        <button class="btn btn-info" type="submit" disabled="disabled" id="flashSale">秒杀</button>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/const.js"></script>
+<script type="text/javascript" src="../js/detail.js"></script>
+</html>
