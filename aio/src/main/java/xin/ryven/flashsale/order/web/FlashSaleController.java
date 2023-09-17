@@ -32,22 +32,33 @@ public class FlashSaleController {
 
     @PostMapping("/flash-sale")
     public Result flashSale(Long id, Integer quantity, String phone) {
-        // 8.5sec/m   threads: 500 ramp-up: 2s circulation: 1   100个库存还剩44个
+        // 18.8sec/m   threads: 200 ramp-up: 2s circulation: 1   100个库存还剩77个
         try {
             return Result.success(flashSaleService.flashSale(id, quantity, phone));
         } catch (BaseSaleException e) {
-            log.error("秒杀失败", e);
+            log.error("秒杀失败: {}", e.getMessage());
             return Result.fail(e.errorCode(), e.getMessage());
         }
     }
 
     @PostMapping("/flash-sale/v2")
     public Result flashSaleV2(Long id, Integer quantity, String phone) {
-        // 15.5sec/m   threads: 500 ramp-up: 2s circulation: 1   100个库存全部销售完成
+        // 11.6sec/m   threads: 200 ramp-up: 2s circulation: 1   100个库存全部销售完成
         try {
             return Result.success(flashSaleService.flashSaleV2(id, quantity, phone));
         } catch (BaseSaleException e) {
-            log.error("秒杀失败", e);
+            log.error("秒杀失败: {}", e.getMessage());
+            return Result.fail(e.errorCode(), e.getMessage());
+        }
+    }
+
+    @PostMapping("/flash-sale/v3")
+    public Result flashSaleV3(Long id, Integer quantity, String phone) {
+        // 11.6sec/m   threads: 200 ramp-up: 2s circulation: 1   100个库存全部销售完成
+        try {
+            return Result.success(flashSaleService.flashSaleV3(id, quantity, phone));
+        } catch (BaseSaleException e) {
+            log.error("秒杀失败: {}", e.getMessage());
             return Result.fail(e.errorCode(), e.getMessage());
         }
     }

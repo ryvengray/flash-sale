@@ -14,7 +14,7 @@ function doFlashSale() {
     let q = $('#num').val()
     let phone = $('#phone').val()
     $.ajax({
-        url: SERVER_URL + '/flash-sale?id=' + flashSaleId + '&quantity=' + q  + '&phone=' + phone,
+        url: SERVER_URL + '/flash-sale/v3?id=' + flashSaleId + '&quantity=' + q  + '&phone=' + phone,
         method: 'POST',
         success: res => {
             if (res.errorCode === 0) {

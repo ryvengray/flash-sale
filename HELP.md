@@ -19,6 +19,12 @@ create USER 'username'@'%' identified by 'password';
 grant all privileges on `db_abc`.* to 'username'@'%';
 ```
 
+* redis
+```shell
+# 设置密码
+docker run -itd --name redis-sale -p 6379:6379 redis --requirepass kdCen83291
+```
+
 ### Guides
 The following guides illustrate how to use some features concretely:
 
