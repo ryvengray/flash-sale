@@ -120,16 +120,17 @@ public class FlashSaleServiceImpl implements FlashSaleService {
 
     private boolean decreaseStock(Long id, Integer quantity) {
         RedisScript<Long> script = new DefaultRedisScript<>(
-                "if redis.call('GET', KEYS[1]) >= ARGV[1] then\n" +
-                        "    return redis.call('DECRBY', KEYS[1], ARGV[1])\n" +
-                        "else\n" +
-                        "    return -1\n" +
-                        "end",
+                """
+                        if redis.call('GET', KEYS[1]) >= ARGV[1] then
+                            return redis.call('DECRBY', KEYS[1], ARGV[1])
+                        else
+                            return -1
+                        end""",
                 Long.class
         );
         String key = redisKey(id);
         Long result = redisTemplate.execute(script, Collections.singletonList(key), quantity.toString());
-        return result >= 0;
+        return result != null && result >= 0;
     }
 
     private SuccessSale buildSuccessSale(Long flashSaleId, String phone) {

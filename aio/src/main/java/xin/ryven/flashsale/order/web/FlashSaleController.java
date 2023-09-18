@@ -54,7 +54,7 @@ public class FlashSaleController {
 
     @PostMapping("/flash-sale/v3")
     public Result flashSaleV3(Long id, Integer quantity, String phone) {
-        // 11.6sec/m   threads: 200 ramp-up: 2s circulation: 1   100个库存全部销售完成
+        // 30.6sec/m   threads: 200 ramp-up: 2s circulation: 1   100个库存全部销售完成，只插入了success-sale，没有异步更新库存
         try {
             return Result.success(flashSaleService.flashSaleV3(id, quantity, phone));
         } catch (BaseSaleException e) {
