@@ -19,6 +19,11 @@ create USER 'username'@'%' identified by 'password';
 grant all privileges on `db_abc`.* to 'username'@'%';
 ```
 
+* pg
+```shell
+docker run --name pgsql-sale -e POSTGRES_PASSWORD='afcjdnei&78a7&CHddjnacg7D' -p 5432:5432 -d postgres
+```
+
 * redis
 ```shell
 # 设置密码
