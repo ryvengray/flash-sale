@@ -29,7 +29,7 @@ class FlashSaleControllerTest {
         // 验证响应状态码是否为200
         assertEquals(HttpStatus.OK, response.getStatusCode());
 
-        Result<List<FlashSale>> result = new JsonU().fromStr(response.getBody(), new TypeToken<>() {
+        Result result = new JsonU().fromStr(response.getBody(), new TypeToken<>() {
         });
         assertEquals(result.getErrorCode(), 0);
     }

@@ -31,9 +31,18 @@ docker run -itd --name redis-sale -p 6379:6379 redis --requirepass kdCen83291
 ```
 
 ### Guides
-The following guides illustrate how to use some features concretely:
+* 打包镜像
+```shell
+cd aio
+docker build --build-arg JAR_FILE='target/*.jar' -t ryvengray/k8s-sale:1.0 .
+# 在mac的M1机器上需要添加platform
+docker build --platform linux/amd64 --build-arg JAR_FILE='target/*.jar' -t ryvengray/k8s-sale:1.1 . 
+# 测试
+docker run --name java-app -p 8080:8080 -d ryvengray/k8s-sale:1.0
+curl localhost:8080
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+# 推送到远程仓库
+docker push ryvengray/k8s-sale:1.0
 
+#
+```

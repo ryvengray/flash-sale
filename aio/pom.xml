@@ -10,7 +10,7 @@
     </parent>
     <groupId>xin.ryven.flashsale</groupId>
     <artifactId>aio</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>aio</name>
     <description>all in one, 单体服务</description>
     <properties>
